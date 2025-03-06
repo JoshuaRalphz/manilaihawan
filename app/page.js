@@ -85,63 +85,145 @@ export default function Home() {
           </div>
         </div>
 
+
+        
+
+        {/* <section className="mb-12 md:mb-20">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="aspect-w-9 aspect-h-16 rounded-xl overflow-hidden shadow-lg">
+              <video 
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
+                <source src="/images/vid.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section> */}
+
         {/* Products Section */}
         <section className="mb-12 md:mb-20">
           <h2 className="text-2xl md:text-4xl font-bold text-[#2c2416] mb-8 md:mb-12 text-center">
             Our Signature Products
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+
+
             {/* Product Cards */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="relative h-48 md:h-64">
                 <Image
-                  src="/images/products/m2.jpg"
+                  src="/images/longa.jpg"
                   alt="Longanisa"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-4 md:p-6">
-                <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">Longanisa</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">
+                  Longanisa
+                  <span className="block text-sm font-normal text-[#4a4235] mt-1">
+                    Filipino - Style Sausage
+                  </span>
+                </h3>
                 <p className="text-sm md:text-base text-[#4a4235]">
-                  Our famous Filipino sausage, available in sweet, hot, and adobo varieties.
+                  Savory, sweet, and packed with flavor, our longanisa is perfect for breakfast, lunch, or dinner.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-              <div className="relative h-48 md:h-64">
-                <Image
-                  src="/images/products/m2.jpg"
-                  alt="Longanisa"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 md:p-6 ">
-                <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">Longanisa</h3>
-                <p className="text-sm md:text-base text-[#4a4235]">
-                  Our famous Filipino sausage, available in sweet, hot, and adobo varieties.
-                </p>
-              </div>
-            </div>
 
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                        {/* Product Cards */}
+                        <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="relative h-48 md:h-64">
                 <Image
-                  src="/images/products/m2.jpg"
+                  src="/images/products/tocino-recipe.jpg"
                   alt="Longanisa"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-4 md:p-6">
-                <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">Longanisa</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">
+                Tocino
+                  <span className="block text-sm font-normal text-[#4a4235] mt-1">
+                  Sweet & Savory Marinated Meat
+                  </span>
+                </h3>
                 <p className="text-sm md:text-base text-[#4a4235]">
-                  Our famous Filipino sausage, available in sweet, hot, and adobo varieties.
+                Perfectly marinated for a mouthwatering experience!
                 </p>
               </div>
             </div>
+
+                        {/* Product Cards */}
+                        <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+              <div className="relative h-48 md:h-64">
+                <Image
+                  src="/images/products/soppi.jpg"
+                  alt="Longanisa"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4 md:p-6">
+                <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">
+                Siopao
+                  <span className="block text-sm font-normal text-[#4a4235] mt-1">
+                  Soft & Fluffy Steamed Buns
+                  </span>
+                </h3>
+                <p className="text-sm md:text-base text-[#4a4235]">
+                A comforting blend of sweet, salty, and meaty flavors in every bite.
+                </p>
+              </div>
+            </div>
+
+            {/* Side by Side Cards */}
+            <div className="col-span-full flex justify-center gap-4 md:gap-8">
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div className="relative h-48 md:h-64">
+                  <Image
+                    src="/images/lumpia.jpg"
+                    alt="Lumpia Shanghai"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">Lumpia Shanghai</h3>
+                  <span className="block text-sm font-normal text-[#4a4235] mt-1">
+                    Crispy & Flavorful Spring Rolls
+                  </span>
+                  <p className="text-sm md:text-base text-[#4a4235]">
+                    Golden, crispy, and packed with savory goodness!
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div className="relative h-48 md:h-64">
+                  <Image
+                    src="/images/tap.jpg"
+                    alt="Beef Tapa"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#d32f2f] mb-2 md:mb-4">Beef Tapa</h3>
+                  <p className="text-sm md:text-base text-[#4a4235]">
+                    A Filipino breakfast staple, marinated with bold flavors.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -164,7 +246,6 @@ export default function Home() {
           </div>
         </section>
 
-        
       </main>
     </div>
   );
