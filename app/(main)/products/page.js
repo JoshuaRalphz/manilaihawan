@@ -1,8 +1,9 @@
 "use client"
 
-import { Card, List, Tooltip, Image, ConfigProvider } from 'antd';
-import 'antd/dist/reset.css'; // Import Antd styles
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from "next/image";
+import { Card, List, Tooltip } from 'antd';
+import 'antd/dist/reset.css';
 
 const { Meta } = Card;
 
@@ -10,18 +11,44 @@ const products = [
   {
     title: "Longanisa",
     image: "/images/home/m2.jpg",
+    description: "Filipino - Style Sausage - Savory, sweet, and packed with flavor, our longanisa is perfect for breakfast, lunch, or dinner.",
     items: [
-      { name: "Sweet Longanisa", image: "/images/products/longanisa/l1.jpg" },
-      { name: "Hot Longanisa", image: "/images/products/longanisa/l2.jpg" },
-      { name: "Pork Adobo Longanisa", image: "/images/products/longanisa/l3.jpg" },
-      { name: "Chicken Longanisa", image: "/images/products/longanisa/l4.jpg" },
-      { name: "Chicken Adobo Longanisa", image: "/images/0.png" },
-      { name: "Vigan Pork Longanisa", image: "/images/0.png" }
+      { 
+        name: "Sweet Longanisa", 
+        image: "/images/products/longanisa/l1.jpg",
+        description: "A deliciously sweet pork sausage with a perfect balance of savory and garlicky notes. A family favorite for its irresistible sweetness!"
+      },
+      { 
+        name: "Hot Longanisa", 
+        image: "/images/products/longanisa/l2.jpg",
+        description: "For those who love a little spice, this longanisa has just the right amount of heat combined with savory goodness. Loved for its bold kick and rich flavor!"
+      },
+      { 
+        name: "Vigan Pork Longanisa", 
+        image: "/images/0.png",
+        description: "A bold and distinct flavor with a garlicky, sour, and savory profile. A must-try for garlic lovers!"
+      },
+      { 
+        name: "Pork Adobo Longanisa", 
+        image: "/images/products/longanisa/l3.jpg",
+        description: "A unique twist on the classic Adobo flavor, featuring rich garlic, soy sauce, and vinegar notes."
+      },
+      { 
+        name: "Chicken Longanisa", 
+        image: "/images/products/longanisa/l4.jpg",
+        description: "The sweetness of chicken paired with a savory and garlicky finish."
+      },
+      { 
+        name: "Chicken Adobo Longanisa", 
+        image: "/images/0.png",
+        description: "A chicken version of the Adobo-inspired longanisa, highlighting garlic, soy sauce, and vinegar."
+      }
     ]
   },
   {
     title: "Tocino",
     image: "/images/home/m3.jpg",
+    description: "Sweet cured pork or chicken, perfect for breakfast. Marinated in a special blend of pineapple juice, sugar, and spices.",
     items: [
       { name: "Pork Tocino", image: "/images/products/tocino/p1.jpg" },
       { name: "Chicken Tocino", image: "/images/0.png" }
@@ -30,6 +57,7 @@ const products = [
   {
     title: "Tapa",
     image: "/images/products/tapa.jpg",
+    description: "Tender beef marinated in garlic, vinegar, and spices. A classic Filipino breakfast favorite.",
     items: [
       { name: "Beef Tapa", image: "/images/products/tapa/t1.jpg" }
     ]
@@ -37,6 +65,7 @@ const products = [
   {
     title: "Siopao",
     image: "/images/products/siopao.jpg",
+    description: "Soft and fluffy steamed buns filled with savory pork or chicken. Available in classic and deluxe varieties.",
     items: [
       { name: "Pork Asado Siopao", image: "/images/products/siopao/sp1.jpg" },
       { name: "Chicken Asado Siopao", image: "/images/products/siopao/sp2.jpg" },
@@ -47,6 +76,7 @@ const products = [
   {
     title: "Shanghai",
     image: "/images/products/shanghai.jpg",
+    description: "Crispy spring rolls filled with ground pork or chicken. Perfect as an appetizer or snack.",
     items: [
       { name: "Pork Lumpia Shanghai", image: "/images/products/shanghai/sh1.jpg" },
       { name: "Chicken Lumpia Shanghai", image: "/images/0.png" }
@@ -54,8 +84,22 @@ const products = [
   }
 ];
 
-export default function Products() {
+export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
+  const images = [
+    "/images/home/m1.jpg",
+    "/images/home/m2.jpg",
+    "/images/home/m3.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const handleItemClick = (item) => {
     if (item.image) {
@@ -64,73 +108,73 @@ export default function Products() {
   };
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: '#d32f2f',
-          borderRadius: 12,
-          colorBgContainer: '#ffffff',
-          colorText: '#4a4235',
-        },
-      }}
-    >
-      <div className="min-h-screen bg-gradient-to-b from-[#f8f4e3] to-[#fff9e8] pt-0 top-0">
-        {/* Fixed Hero Section */}
-        <div className="relative h-[400px] mb-12 overflow-hidden">
-          <div className="absolute inset-0 flex">
-            <div className="relative w-1/2 h-full">
-              <Image
-                src="/images/home/m3.jpg"
-                alt="Delicious Filipino Food 1"
-                fill="true"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative w-1/2 h-full">
-              <Image
-                src="/images/products/tapa.jpg"
-                alt="Delicious Filipino Food 2"
-                fill="true"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative w-1/2 h-full">
-              <Image
-                src="/images/home/m3.jpg"
-                alt="Delicious Filipino Food 1"
-                fill="true"
-                className="object-cover"
-              />
-            </div>
-            
+    <div className="min-h-screen bg-gradient-to-b from-[#fff3e0] to-[#fff9e8]">
+      <style jsx>{`
+        body {
+          background: linear-gradient(to bottom, #fff3e0, #fff9e8);
+        }
+      `}</style>
+      <main className="container mx-auto px-4 md:px-6 py-8 md:py-12 max-w-6xl">
+        {/* Hero Section */}
+        <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] max-h-[700px] rounded-xl overflow-hidden mb-8 md:mb-16 ">
+          {/* Carousel */}
+          <div className="relative h-full">
+            {images.map((src, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt="Manila's Ihawan"
+                  fill
+                  className="object-cover"
+                  priority={index === 3}
+                />
+              </div>
+            ))}
           </div>
-          
 
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center p-8">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Taste the Flavors of <span className="text-[#d32f2f]">Manila</span>
-            </h1>
-            <p className="text-xl text-white/90 max-w-2xl mb-8">
-              Authentic Filipino flavors crafted with love since 1989
-            </p>
-          </div>
-        </div>
-
-        <div className="flex justify-center mb-12">
-            <div className="w-[400px] md:w-[700px] max-w-[95%] flex justify-center">
+          {/* Overlay Content */}
+          <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center p-4 md:p-8">
+            <div className="w-[300px] md:w-[600px] max-w-[90%] mb-8">
               <Image
                 src="/images/logo.png"
                 alt="Manila's Ihawan Logo"
-                width={10800}
-                height={200}
-                className="object-contain"
+                width={1200}
+                height={480}
+                className="object-contain w-full h-full"
                 priority
               />
             </div>
+            
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+            Authentic Flavors of  <span className="text-[var(--primary)]">Manila</span>
+            </h1>
+            <p className="text-base md:text-xl text-white/90 max-w-2xl mb-4 md:mb-8">
+            Authentic Filipino flavors since 1989. Enjoy our signature Longanisa, Tocino, and more!
+            </p>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+              <a
+                className="rounded-lg bg-[var(--primary)] text-white px-6 py-2 md:px-8 md:py-3 text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors duration-300 transform hover:scale-105"
+                href="/products"
+              >
+                Browse Our Selection
+              </a>
+              <a
+                className="rounded-lg border-2 border-white text-white px-6 py-2 md:px-8 md:py-3 text-sm md:text-base font-medium hover:bg-[var(--secondary)] hover:text-[var(--primary)] transition-colors duration-300"
+                href="/about"
+              >
+                Get in Touch
+              </a>
+            </div>
           </div>
+        </div>
 
-        {/* Products Section */}
-        <div className="container mx-auto px-4 max-w-7xl">
+         {/* Products Section */}
+         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#2c2416] mb-4">
               Our Premium Products
@@ -151,7 +195,7 @@ export default function Products() {
                   <Image
                     src={product.image}
                     alt={product.title}
-                    fill="true"
+                    fill
                     className="object-cover rounded-t-xl"
                     style={{ objectPosition: 'center' }}
                   />
@@ -159,49 +203,59 @@ export default function Products() {
                 </div>
                 <Meta
                   title={
-                    <h2 className="text-2xl font-bold text-[#d32f2f] mb-4">
+                    <h2 className="text-2xl font-bold text-[#d32f2f] pt-4">
                       {product.title}
                     </h2>
                   }
                   description={
-                    <List
-                      dataSource={product.items}
-                      className="mb-6"
-                      renderItem={(item, idx) => (
-                        <Tooltip
-                          title={item.image ? (
-                            <div className="w-[400px] h-[400px] relative shadow-xl">
-                              <Image
-                                src={item.image}
-                                alt={item.name}
-                                width={400}
-                                height={400}
-                                className="object-cover w-full h-full rounded-lg"
-                              />
-                            </div>
-                          ) : null}
-                          placement="right"
-                          overlayClassName="!max-w-none !p-0"
-                          color="white"
-                        >
-                          <div
-                            onClick={() => handleItemClick(item)}
-                            className="cursor-pointer"
-                          >
-                            <List.Item 
-                              className="!px-4 !py-3 !m-0 hover:bg-white rounded-lg transition-all duration-200 transform hover:scale-105"
-                            >
-                              <div className="flex items-center space-x-3">
-                                <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
-                                <span className="text-[#4a4235]">
-                                  {item.name}
-                                </span>
+                    <div>
+                      <p className="text-sm text-[#4a4235] px-4 mt-2 mb-4 leading-relaxed">
+                        {product.description}
+                      </p>
+                      <List
+                        dataSource={product.items}
+                        className="mb-6"
+                        renderItem={(item, idx) => (
+                          <Tooltip
+                            title={item.image ? (
+                              <div className="w-[500px] h-[500px] relative shadow-xl">
+                                <Image
+                                  src={item.image}
+                                  alt={item.name}
+                                  width={500}
+                                  height={500}
+                                  className="object-cover w-full h-full rounded-lg"
+                                />
+                                {item.description && (
+                                  <div className="absolute bottom-0 left-0 right-0 bg-black/75 p-4 text-white text-sm">
+                                    {item.description}
+                                  </div>
+                                )}
                               </div>
-                            </List.Item>
-                          </div>
-                        </Tooltip>
-                      )}
-                    />
+                            ) : null}
+                            placement="right"
+                            classNames={{ root: "!max-w-none !p-0" }}
+                            color="white"
+                          >
+                            <div
+                              onClick={() => handleItemClick(item)}
+                              className="cursor-pointer"
+                            >
+                              <List.Item 
+                                className="!px-4 !py-3 !m-0 hover:bg-white rounded-lg transition-all duration-200 transform hover:scale-105"
+                              >
+                                <div className="flex items-center space-x-3">
+                                  <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
+                                  <span className="text-[#4a4235]">
+                                    {item.name}
+                                  </span>
+                                </div>
+                              </List.Item>
+                            </div>
+                          </Tooltip>
+                        )}
+                      />
+                    </div>
                   }
                 />
                 <button className="w-full bg-[#d32f2f] text-white px-6 py-3 rounded-lg hover:bg-[#b71c1c] transition-colors duration-200 mt-4">
@@ -211,33 +265,7 @@ export default function Products() {
             ))}
           </div>
         </div>
-
-        {/* Image Preview Modal */}
-        {previewImage && (
-          <div 
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
-            onClick={() => setPreviewImage(null)}
-          >
-            <div className="relative w-full max-w-2xl h-auto">
-              <Image
-                src={previewImage}
-                alt="Preview"
-                width={800}
-                height={800}
-                className="object-cover w-full h-full rounded-lg"
-              />
-              <button 
-                className="absolute -top-8 -right-8 text-white hover:text-[#d32f2f] transition-colors duration-200"
-                onClick={() => setPreviewImage(null)}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    </ConfigProvider>
+      </main>
+    </div>
   );
-} 
+}
