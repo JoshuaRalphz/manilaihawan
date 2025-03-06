@@ -8,7 +8,15 @@ export default function Home() {
   const images = [
     "/images/home/m1.jpg",
     "/images/home/m2.jpg",
-    "/images/home/m3.jpg"
+    "/images/home/m3.jpg",
+    "/images/lumpia.jpg",
+    "/images/tap.jpg",
+    "/images/tc1.jpg",
+    "/images/products/tocino-recipe.jpg",
+    "/images/products/soppi.jpg",
+    "/images/products/tapa.jpg",
+    "/images/products/siopao.jpg",
+    "/images/products/shanghai.jpg",
   ];
 
   useEffect(() => {
@@ -63,7 +71,7 @@ export default function Home() {
             </div>
             
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
-              Taste the Flavors of <span className="text-[var(--primary)]">Manila</span>
+              Taste the Flavors of Manila
             </h1>
             <p className="text-base md:text-xl text-white/90 max-w-2xl mb-4 md:mb-8">
               Authentic Filipino flavors crafted with love since 1989. Experience the best Longanisa, Tocino, and more!
@@ -84,27 +92,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-
-        
-
-        {/* <section className="mb-12 md:mb-20">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="aspect-w-9 aspect-h-16 rounded-xl overflow-hidden shadow-lg">
-              <video 
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-              >
-                <source src="/images/vid.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </section> */}
 
         {/* Products Section */}
         <section className="mb-12 md:mb-20">

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from "next/image";
 import { Card, List, Tooltip, Modal } from 'antd';
 import 'antd/dist/reset.css';
@@ -113,23 +113,9 @@ const products = [
 ];
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const images = [
-    "/images/home/m1.jpg",
-    "/images/home/m2.jpg",
-    "/images/home/m3.jpg"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
 
   const handleImageClick = (image) => {
     setSelectedImage(image);
@@ -157,24 +143,18 @@ export default function Home() {
       <main className="container mx-auto px-4 md:px-6 py-8 md:py-12 max-w-6xl">
         {/* Hero Section */}
         <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] max-h-[700px] rounded-xl overflow-hidden mb-8 md:mb-16 ">
-          {/* Carousel */}
-          <div className="relative h-full">
-            {images.map((src, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <Image
-                  src={src}
-                  alt="Manila's Ihawan"
-                  fill
-                  className="object-cover"
-                  priority={index === 3}
-                />
-              </div>
-            ))}
+          {/* Video Background */}
+          <div className="absolute inset-0 w-full h-full">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/images/vid.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           {/* Overlay Content */}
@@ -191,7 +171,7 @@ export default function Home() {
             </div>
             
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
-            Authentic Flavors of  <span className="text-[var(--primary)]">Manila</span>
+            Authentic Flavors of Manila
             </h1>
             <p className="text-base md:text-xl text-white/90 max-w-2xl mb-4 md:mb-8">
             Authentic Filipino flavors since 1989. Enjoy our signature Longanisa, Tocino, and more!
@@ -212,6 +192,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
 
          {/* Products Section */}
          <div className="container mx-auto px-4 max-w-7xl">
