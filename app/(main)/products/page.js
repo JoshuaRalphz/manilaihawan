@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
-import { Card, List, Tooltip } from 'antd';
+import { Card, List, Tooltip, Modal } from 'antd';
 import 'antd/dist/reset.css';
 
 const { Meta } = Card;
@@ -25,7 +25,7 @@ const products = [
       },
       { 
         name: "Vigan Pork Longanisa", 
-        image: "/images/0.png",
+        image: "/images/products/longanisa/vganlong.jpg",
         description: "A bold and distinct flavor with a garlicky, sour, and savory profile. A must-try for garlic lovers!"
       },
       { 
@@ -40,7 +40,7 @@ const products = [
       },
       { 
         name: "Chicken Adobo Longanisa", 
-        image: "/images/0.png",
+        image: "/images/products/longanisa/chkn adobo.jpg",
         description: "A chicken version of the Adobo-inspired longanisa, highlighting garlic, soy sauce, and vinegar."
       }
     ]
@@ -48,38 +48,66 @@ const products = [
   {
     title: "Tocino",
     image: "/images/home/m3.jpg",
-    description: "Sweet cured pork or chicken, perfect for breakfast. Marinated in a special blend of pineapple juice, sugar, and spices.",
+    description: "Sweet & Savory Marinated Meat - Perfectly marinated for a mouthwatering experience!",
     items: [
-      { name: "Pork Tocino", image: "/images/products/tocino/p1.jpg" },
-      { name: "Chicken Tocino", image: "/images/0.png" }
+      { 
+        name: "Pork Tocino", 
+        image: "/images/products/tocino/p1.jpg",
+        description: "The classic sweet and savory Filipino favorite, marinated to perfection. A breakfast staple everyone craves!"
+      },
+      { 
+        name: "Chicken Tocino", 
+        image: "/images/products/tocino/chicken tocino.jpg",
+        description: "A deliciously sweet and savory chicken alternative to the traditional tocino. A lighter option that doesn't compromise on flavor!"
+      }
     ]
   },
   {
-    title: "Tapa",
+    title: "Beef Tapa",
     image: "/images/products/tapa.jpg",
-    description: "Tender beef marinated in garlic, vinegar, and spices. A classic Filipino breakfast favorite.",
+    description: "A Filipino breakfast staple, marinated with bold flavors.",
     items: [
-      { name: "Beef Tapa", image: "/images/products/tapa/t1.jpg" }
+      { 
+        name: "Beef Tapa", 
+        image: "/images/products/tapa/t1.jpg",
+        description: "Our take on this classic dish, featuring a delicious combination of garlic and soy sauce. A go-to for those who love rich, umami flavors!"
+      }
     ]
   },
   {
     title: "Siopao",
     image: "/images/products/siopao.jpg",
-    description: "Soft and fluffy steamed buns filled with savory pork or chicken. Available in classic and deluxe varieties.",
+    description: "Soft & Fluffy Steamed Buns - A comforting blend of sweet, salty, and meaty flavors in every bite.",
     items: [
-      { name: "Pork Asado Siopao", image: "/images/products/siopao/sp1.jpg" },
-      { name: "Chicken Asado Siopao", image: "/images/products/siopao/sp2.jpg" },
+      { 
+        name: "Pork Asado Siopao", 
+        image: "/images/products/siopao/sopa2.jpg",
+        description: "A Filipino classic filled with juicy, savory-sweet pork. A best-seller for its melt-in-your-mouth goodness!"
+      },
+      { 
+        name: "Chicken Asado Siopao", 
+        image: "/images/products/siopao/sopa.jpg",
+        description: "A flavorful chicken alternative with a perfect balance of sweet and savory. A fluffy, flavorful delight that's always in demand!"
+      },
       { name: "Deluxe Pork Bola Bola Siopao", image: "/images/0.png" },
       { name: "Deluxe Chicken Bola Bola Siopao", image: "/images/0.png" }
     ]
   },
   {
-    title: "Shanghai",
+    title: "Lumpia Shanghai",
     image: "/images/products/shanghai.jpg",
-    description: "Crispy spring rolls filled with ground pork or chicken. Perfect as an appetizer or snack.",
+    description: "Crispy & Flavorful Spring Rolls - Golden, crispy, and packed with savory goodness!",
     items: [
-      { name: "Pork Lumpia Shanghai", image: "/images/products/shanghai/sh1.jpg" },
-      { name: "Chicken Lumpia Shanghai", image: "/images/0.png" }
+      { 
+        name: "Pork Lumpia Shanghai", 
+        image: "/images/products/shanghai/IMG_1321.jpg",
+        description: "A meaty and garlicky filling wrapped in a crispy golden shell. Perfectly crunchy and always a hit at gatherings!"
+      },
+      { 
+        name: "Chicken Lumpia Shanghai", 
+        image: "/images/products/shanghai/IMG_1322.jpg",
+        description: "A lighter yet equally flavorful version of the classic lumpia, packed with delicious chicken filling."
+      }
     ]
   }
 ];
@@ -87,6 +115,8 @@ const products = [
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const images = [
     "/images/home/m1.jpg",
     "/images/home/m2.jpg",
@@ -100,6 +130,16 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [images.length]);
+
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   const handleItemClick = (item) => {
     if (item.image) {
@@ -224,8 +264,12 @@ export default function Home() {
                                   alt={item.name}
                                   width={500}
                                   height={500}
-                                  className="object-cover w-full h-full rounded-lg"
+                                  className="object-cover w-full h-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                                  onClick={() => handleImageClick(item.image)}
                                 />
+                                <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                                  Click to enlarge
+                                </div>
                                 {item.description && (
                                   <div className="absolute bottom-0 left-0 right-0 bg-black/75 p-4 text-white text-sm">
                                     {item.description}
@@ -248,6 +292,10 @@ export default function Home() {
                                   <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
                                   <span className="text-[#4a4235]">
                                     {item.name}
+                                    {item.image && (
+                                      <span className="ml-2 text-xs text-gray-400">
+                                      </span>
+                                    )}
                                   </span>
                                 </div>
                               </List.Item>
@@ -266,6 +314,39 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Modal
+        open={isModalOpen}
+        onCancel={handleModalClose}
+        footer={null}
+        width="60vw"
+        centered
+        closeIcon={
+          <div className="p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </div>
+        }
+        styles={{
+          body: { padding: 0 }
+        }}
+      >
+        {selectedImage && (
+          <div className="relative">
+            <Image
+              src={selectedImage}
+              alt="Full size preview"
+              width={1200}
+              height={800}
+              className="object-contain w-full h-full"
+            />
+            <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+              Press ESC to close
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 }
