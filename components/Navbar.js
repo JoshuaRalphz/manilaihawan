@@ -49,6 +49,30 @@ export default function Navbar() {
                 Products
               </Link>
               <Link
+                href="/partners"
+                className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
+                  isActive('/partners') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+                } after:transition-all after:duration-200`}
+              >
+                Partners
+              </Link>
+              <Link
+                href="/partners2"
+                className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
+                  isActive('/partners2') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+                } after:transition-all after:duration-200`}
+              >
+                Partners2
+              </Link>
+              <Link
+                href="/partners3"
+                className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
+                  isActive('/partners3') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+                } after:transition-all after:duration-200`}
+              >
+                Partners3
+              </Link>
+              <Link
                 href="/about"
                 className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
                   isActive('/about') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
@@ -110,6 +134,14 @@ export default function Navbar() {
             } after:transition-all after:duration-200`}
           >
             Products
+          </Link>
+          <Link
+            href="/partners"
+            className={`block text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
+              isActive('/partners') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+            } after:transition-all after:duration-200`}
+          >
+            Partners
           </Link>
           <Link
             href="/about"
