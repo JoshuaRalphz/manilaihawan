@@ -113,24 +113,20 @@ const products = [
 ];
 
 export default function Home() {
-  const [previewImage, setPreviewImage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
-  const handleImageClick = (image) => {
+  const handleImageClick = (image, item = null) => {
     setSelectedImage(image);
+    setSelectedItem(item);
     setIsModalOpen(true);
   };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
-  };
-
-  const handleItemClick = (item) => {
-    if (item.image) {
-      setPreviewImage(item.image);
-    }
+    setSelectedItem(null);
   };
 
   return (
@@ -140,9 +136,9 @@ export default function Home() {
           background: linear-gradient(to bottom, #fff3e0, #fff9e8);
         }
       `}</style>
-      <main className="container mx-auto px-4 md:px-6 py-8 md:py-12 max-w-6xl">
-        {/* Hero Section */}
-        <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] max-h-[700px] rounded-xl overflow-hidden mb-8 md:mb-16 ">
+      <main className="container mx-auto px-4 py-6 max-w-6xl">
+        {/* Hero Section - Improved mobile responsiveness */}
+        <div className="relative h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[60vh] max-h-[700px] rounded-xl overflow-hidden mb-8 md:mb-12">
           {/* Video Background */}
           <div className="absolute inset-0 w-full h-full">
             <video
@@ -157,9 +153,9 @@ export default function Home() {
             </video>
           </div>
 
-          {/* Overlay Content */}
-          <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center p-4 md:p-8">
-            <div className="w-[300px] md:w-[600px] max-w-[90%] mb-8">
+          {/* Overlay Content - Better responsive text sizing and spacing */}
+          <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center p-4">
+            <div className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[600px] max-w-[90%] mb-4 sm:mb-6 md:mb-8">
               <Image
                 src="/images/logo.png"
                 alt="Manila's Ihawan Logo"
@@ -170,21 +166,21 @@ export default function Home() {
               />
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
-            Authentic Flavors of Manila
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+              Authentic Flavors of Manila
             </h1>
-            <p className="text-base md:text-xl text-white/90 max-w-2xl mb-4 md:mb-8">
-            Authentic Filipino flavors since 1989. Enjoy our signature Longanisa, Tocino, and more!
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mb-4 md:mb-6 px-2">
+              Authentic Filipino flavors since 1989. Enjoy our signature Longanisa, Tocino, and more!
             </p>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+            <div className="flex flex-row gap-3 sm:gap-4 md:gap-6 justify-center">
               <a
-                className="rounded-lg bg-[var(--primary)] text-white px-6 py-2 md:px-8 md:py-3 text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors duration-300 transform hover:scale-105"
+                className="rounded-lg bg-[var(--primary)] text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors duration-300 transform hover:scale-105"
                 href="/products"
               >
                 Browse Our Selection
               </a>
               <a
-                className="rounded-lg border-2 border-white text-white px-6 py-2 md:px-8 md:py-3 text-sm md:text-base font-medium hover:bg-[var(--secondary)] hover:text-[var(--primary)] transition-colors duration-300"
+                className="rounded-lg border-2 border-white text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[var(--secondary)] hover:text-[var(--primary)] transition-colors duration-300"
                 href="/about"
               >
                 Get in Touch
@@ -193,26 +189,25 @@ export default function Home() {
           </div>
         </div>
 
-
-         {/* Products Section */}
-         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#2c2416] mb-4">
+        {/* Products Section - Improved grid for different screen sizes */}
+        <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2c2416] mb-2 sm:mb-4">
               Our Premium Products
             </h2>
-            <p className="text-lg text-[#4a4235] max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-[#4a4235] max-w-2xl mx-auto px-2">
               Explore our wide range of authentic Filipino products, made with traditional recipes and the finest ingredients
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {products.map((product, index) => (
               <Card
                 key={index}
                 hoverable
                 className="!border-none !shadow-lg hover:!shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm overflow-hidden"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.title}
@@ -224,70 +219,40 @@ export default function Home() {
                 </div>
                 <Meta
                   title={
-                    <h2 className="text-2xl font-bold text-[#d32f2f] pt-4">
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#d32f2f] pt-3 sm:pt-4">
                       {product.title}
                     </h2>
                   }
                   description={
                     <div>
-                      <p className="text-sm text-[#4a4235] px-4 mt-2 mb-4 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#4a4235] px-2 sm:px-4 mt-1 sm:mt-2 mb-2 sm:mb-4 leading-relaxed">
                         {product.description}
                       </p>
                       <List
                         dataSource={product.items}
-                        className="mb-6"
+                        className="mb-4 sm:mb-6"
                         renderItem={(item, idx) => (
-                          <Tooltip
-                            title={item.image ? (
-                              <div className="w-[500px] h-[500px] relative shadow-xl">
-                                <Image
-                                  src={item.image}
-                                  alt={item.name}
-                                  width={500}
-                                  height={500}
-                                  className="object-cover w-full h-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
-                                  onClick={() => handleImageClick(item.image)}
-                                />
-                                <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-                                  Click to enlarge
-                                </div>
-                                {item.description && (
-                                  <div className="absolute bottom-0 left-0 right-0 bg-black/75 p-4 text-white text-sm">
-                                    {item.description}
-                                  </div>
-                                )}
-                              </div>
-                            ) : null}
-                            placement="right"
-                            classNames={{ root: "!max-w-none !p-0" }}
-                            color="white"
+                          <div
+                            onClick={() => handleImageClick(item.image, item)}
+                            className="cursor-pointer"
                           >
-                            <div
-                              onClick={() => handleItemClick(item)}
-                              className="cursor-pointer"
+                            <List.Item 
+                              className="!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-white rounded-lg transition-all duration-200 transform hover:scale-105"
                             >
-                              <List.Item 
-                                className="!px-4 !py-3 !m-0 hover:bg-white rounded-lg transition-all duration-200 transform hover:scale-105"
-                              >
-                                <div className="flex items-center space-x-3">
-                                  <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
-                                  <span className="text-[#4a4235]">
-                                    {item.name}
-                                    {item.image && (
-                                      <span className="ml-2 text-xs text-gray-400">
-                                      </span>
-                                    )}
-                                  </span>
-                                </div>
-                              </List.Item>
-                            </div>
-                          </Tooltip>
+                              <div className="flex items-center space-x-2 sm:space-x-3">
+                                <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
+                                <span className="text-[#4a4235] text-xs sm:text-sm">
+                                  {item.name}
+                                </span>
+                              </div>
+                            </List.Item>
+                          </div>
                         )}
                       />
                     </div>
                   }
                 />
-                <button className="w-full bg-[#d32f2f] text-white px-6 py-3 rounded-lg hover:bg-[#b71c1c] transition-colors duration-200 mt-4">
+                <button className="w-full bg-[#d32f2f] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-[#b71c1c] transition-colors duration-200 mt-2 sm:mt-4 text-sm sm:text-base">
                   Order Now
                 </button>
               </Card>
@@ -295,15 +260,17 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Responsive Modal */}
       <Modal
         open={isModalOpen}
         onCancel={handleModalClose}
         footer={null}
-        width="60vw"
+        width="90vw"
         centered
         closeIcon={
-          <div className="p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="p-1 sm:p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -315,15 +282,22 @@ export default function Home() {
       >
         {selectedImage && (
           <div className="relative">
-            <Image
-              src={selectedImage}
-              alt="Full size preview"
-              width={1200}
-              height={800}
-              className="object-contain w-full h-full"
-            />
-            <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-              Press ESC to close
+            <div className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] relative">
+              <Image
+                src={selectedImage}
+                alt="Full size preview"
+                fill
+                className="object-contain"
+              />
+            </div>
+            {selectedItem && selectedItem.description && (
+              <div className="bg-black/75 p-3 sm:p-4 text-white text-xs sm:text-sm">
+                <h3 className="font-bold mb-1">{selectedItem.name}</h3>
+                <p>{selectedItem.description}</p>
+              </div>
+            )}
+            <div className="absolute bottom-4 left-4 bg-black/50 text-white px-2 py-1 rounded-full text-xs">
+              Tap outside to close
             </div>
           </div>
         )}
