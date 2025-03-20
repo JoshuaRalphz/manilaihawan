@@ -117,23 +117,17 @@ export default function Partners() {
           </div>
         </section>
 
-        <h2 className="text-2xl md:text-4xl font-bold text-[#2c2416] mb-8 text-center">
-           Retails
-          </h2>
-
         {/* Partners Logo Grid */}
         <section className="mb-12 md:mb-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {partners.map((partner, index) => (
               <div key={index} className="bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300 p-4 flex items-center justify-center">
-                <div className="relative h-24 md:h-32 w-full">
+                <div className="relative w-full aspect-square">
                   <Image
                     src={partner.image}
                     alt={partner.name}
-                    width={200}
-                    height={100}
-                    className="object-contain"
-                    unoptimized={true}
+                    fill
+                    className="object-contain p-4"
                   />
                 </div>
               </div>
@@ -141,29 +135,6 @@ export default function Partners() {
           </div>
         </section>
 
-        <h2 className="text-2xl md:text-4xl font-bold text-[#2c2416] mb-8 text-center">
-           Food Services
-          </h2>
-
-        {/* Partners Logo Grid */}
-        <section className="mb-12 md:mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {partners.map((partner, index) => (
-              <div key={index} className="bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300 p-4 flex items-center justify-center">
-                <div className="relative h-24 md:h-32 w-full">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    width={200}
-                    height={100}
-                    className="object-contain"
-                    unoptimized={true}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
                 {/* Call to Action */}
                 <section className="text-center mb-8">
