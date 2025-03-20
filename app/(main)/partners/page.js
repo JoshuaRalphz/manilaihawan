@@ -4,44 +4,79 @@ import React from 'react';
 import Image from "next/image";
 
 export default function Partners() {
-  // Partner data - you can replace with your actual partners
   const partners = [
     {
-      name: "Seafood City Supermarket",
-      logo: "https://logo.clearbit.com/seafoodcity.com",
-      description: "Supporting Filipino grocery stores across North America since 1985.",
-      type: "Retail Partner"
+      name: "H Mart",
+      image: "/images/logo/1.png"
     },
     {
       name: "Island Pacific Supermarket",
-      logo: "https://logo.clearbit.com/islandpacificmarket.com",
-      description: "Premium distributor of Asian food products to restaurants and retailers.",
-      type: "Retail Partner"
+      image: "/images/logo/2.png"
     },
     {
       name: "99 Ranch Market",
-      logo: "https://logo.clearbit.com/99ranch.com",
-      description: "Annual celebration of Filipino culinary traditions and cultural heritage.",
-      type: "Retail Partner"
+      image: "/images/logo/3.jpg"
     },
     {
       name: "FilStop Filipino Store",
-      logo: "https://logo.clearbit.com/filstop.com",
-      description: "International marketplace featuring authentic ingredients from around the world.",
-      type: "Retail Partner"
+      image: "/images/logo/4.jpg"
     },
     {
       name: "Philippine Food Market",
-      logo: "https://logo.clearbit.com/philippinefoodmarket.com",
-      description: "Promoting Asian cuisine and food products throughout North America.",
-      type: "Retail Partner"
+      image: "/images/logo/5.jpg"
     },
     {
       name: "Oriental Mart",
-      logo: "https://logo.clearbit.com/orientalmart.com",
-      description: "Supporting local communities through food education and outreach programs.",
-      type: "Retail Partner"
-    }
+      image: "/images/logo/6.jpg"
+    },
+    {
+      name: "Filipino Grocers Alliance",
+      image: "/images/logo/7.jpg"
+    },
+    {
+      name: "Asian Food Distributors",
+      image: "/images/logo/8.jpg"
+    },
+    {
+      name: "Manila Mart",
+      image: "/images/logo/9.jpg"
+    },
+    {
+      name: "Pacific Asian Foods",
+      image: "/images/logo/10.jpg"
+    },
+    {
+      name: "Filipino Flavors",
+      image: "/images/logo/11.jpg"
+    },
+    {
+      name: "FilStop Filipino Store",
+      image: "/images/logo/12.jpg"
+    },
+    {
+      name: "Oriental Mart",
+      image: "/images/logo/14.png"
+    },
+    {
+      name: "Filipino Grocers Alliance",
+      image: "/images/logo/15.png"
+    },
+    {
+      name: "Asian Food Distributors",
+      image: "/images/logo/16.png"
+    },
+    {
+      name: "Manila Mart",
+      image: "/images/logo/17.png"
+    },
+    {
+      name: "Pacific Asian Foods",
+      image: "/images/logo/18.png"
+    },
+    {
+      name: "Filipino Flavors",
+      image: "/images/logo/19.jpg"
+    },
   ];
 
   return (
@@ -51,161 +86,108 @@ export default function Partners() {
         <div className="relative h-[30vh] md:h-[40vh] rounded-xl overflow-hidden mb-8 md:mb-16">
           <div className="absolute inset-0">
             <Image
-              src="/images/tc1.jpg" // Already using an existing image
+              src="/images/tc1.jpg"
               alt="Our Partners"
               fill
               className="object-cover"
               priority
             />
           </div>
+
+          {/* Overlay Content */}
           <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-4 md:p-8">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
               Our Partners
             </h1>
             <p className="text-base md:text-xl text-white/90 max-w-2xl">
-              Building relationships that bring authentic Filipino flavors to more tables around the world.
+              Meet the retailers, restaurants, and caterers who proudly feature Manila's Ihawan products
             </p>
           </div>
         </div>
 
+        {/* Introduction Section */}
+        <section className="bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-8 md:mb-12">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-xl md:text-3xl font-bold text-[#2c2416] mb-4">
+              Where to Find Manila's Ihawan Products
+            </h2>
+            <p className="text-base text-[#4a4235]">
+              Since 1989, we've partnered with these fine establishments to bring our authentic Filipino products to customers across North America.
+            </p>
+          </div>
+        </section>
 
-        {/* Partner Showcase Section */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold text-[#2c2416] mb-8 text-center">
-            Our Valued Partners
+        <h2 className="text-2xl md:text-4xl font-bold text-[#2c2416] mb-8 text-center">
+           Retails
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        {/* Partners Logo Grid */}
+        <section className="mb-12 md:mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {partners.map((partner, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-1"
-              >
-                <div className="relative h-40 bg-gray-50 flex items-center justify-center p-6">
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 text-xs font-medium bg-[#f8e8d4] text-[#d32f2f] rounded-full mb-2">
-                    {partner.type}
-                  </span>
-                  <h3 className="text-xl font-bold text-[#2c2416] mb-2">
-                    {partner.name}
-                  </h3>
-                  <p className="text-[#4a4235]">
-                    {partner.description}
-                  </p>
+              <div key={index} className="bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300 p-4 flex items-center justify-center">
+                <div className="relative h-24 md:h-32 w-full">
+                  <Image
+                    src={partner.image}
+                    alt={partner.name}
+                    width={200}
+                    height={100}
+                    className="object-contain"
+                    unoptimized={true}
+                  />
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-                {/* Become a Partner Section */}
-                <section className="bg-white/90 backdrop-blur-sm rounded-xl p-6 md:p-8 mb-12 md:mb-20">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="md:w-1/2">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#2c2416] mb-4">
-                  Become a Partner
-                </h2>
-                <p className="text-base text-[#4a4235] mb-6">
-                  Join our growing network of retailers, restaurants, and caterers featuring Manila's Ihawan products. We offer flexible wholesale pricing, marketing support, and dedicated customer service.
-                </p>
-                <ul className="space-y-2 mb-6 text-[#4a4235]">
-                  <li className="flex items-start gap-2">
-                    <svg className="h-5 w-5 text-[#d32f2f] mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Competitive wholesale pricing</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="h-5 w-5 text-[#d32f2f] mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Marketing and promotional support</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="h-5 w-5 text-[#d32f2f] mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Reliable delivery and order fulfillment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="h-5 w-5 text-[#d32f2f] mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Dedicated account management</span>
-                  </li>
-                </ul>
-                <a
-                  href="/contact"
-                  className="inline-block rounded-lg bg-[#d32f2f] text-white px-6 py-3 text-base font-medium hover:bg-[#b71c1c] transition-colors"
-                >
-                  Contact Us to Partner
-                </a>
-              </div>
-              <div className="md:w-1/2">
-                <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+        <h2 className="text-2xl md:text-4xl font-bold text-[#2c2416] mb-8 text-center">
+           Food Services
+          </h2>
+
+        {/* Partners Logo Grid */}
+        <section className="mb-12 md:mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {partners.map((partner, index) => (
+              <div key={index} className="bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300 p-4 flex items-center justify-center">
+                <div className="relative h-24 md:h-32 w-full">
                   <Image
-                    src="/images/products/tapa.jpg"
-                    alt="Partnership"
-                    fill
-                    className="object-cover"
+                    src={partner.image}
+                    alt={partner.name}
+                    width={200}
+                    height={100}
+                    className="object-contain"
+                    unoptimized={true}
                   />
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
-   
-        {/* FAQ Section */}
-        <section className="mb-12 md:mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#2c2416] mb-8 text-center">
-            Partnership FAQs
+                {/* Call to Action */}
+                <section className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#2c2416] mb-4">
+            Ready to Join the Manila's Ihawan Family?
           </h2>
-          <div className="bg-white rounded-xl shadow-lg divide-y">
-            <div className="p-6">
-              <h3 className="text-lg font-bold text-[#2c2416] mb-2">
-                What types of partnerships do you offer?
-              </h3>
-              <p className="text-[#4a4235]">
-                We offer partnerships for distributors, retailers, restaurants, caterers, and community organizations. Each partnership is tailored to meet the specific needs of your business.
-              </p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-bold text-[#2c2416] mb-2">
-                Is there a minimum order requirement?
-              </h3>
-              <p className="text-[#4a4235]">
-                Yes, we have minimum order quantities that vary based on partnership type and location. Contact our team for specific details relevant to your business.
-              </p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-bold text-[#2c2416] mb-2">
-                Do you provide marketing support for partners?
-              </h3>
-              <p className="text-[#4a4235]">
-                Absolutely! We offer marketing materials, product training, and collaborative promotional opportunities to help boost sales and customer engagement.
-              </p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-bold text-[#2c2416] mb-2">
-                What is your delivery area?
-              </h3>
-              <p className="text-[#4a4235]">
-                We currently service partners throughout North America, with plans to expand to international markets. Special arrangements can be made for locations outside our standard delivery zones.
-              </p>
-            </div>
+          <p className="text-[#4a4235] max-w-2xl mx-auto mb-6">
+            Take the first step toward bringing authentic Filipino flavors to your customers.
+          </p>
+          <div className="flex justify-center gap-4">
+            <a
+              href="/contact"
+              className="rounded-lg bg-[#d32f2f] text-white px-6 py-3 text-base font-medium hover:bg-[#b71c1c] transition-colors"
+            >
+              Apply Now
+            </a>
+            <a
+              href="/wholesale"
+              className="rounded-lg border-2 border-[#d32f2f] text-[#d32f2f] px-6 py-3 text-base font-medium hover:bg-[#d32f2f]/10 transition-colors"
+            >
+              Wholesale Info
+            </a>
           </div>
         </section>
-
       </main>
     </div>
   );

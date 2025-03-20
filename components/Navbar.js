@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const isActive = (href) => pathname === href;
 
@@ -48,29 +50,14 @@ export default function Navbar() {
               >
                 Products
               </Link>
+
               <Link
                 href="/partners"
-                className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
-                  isActive('/partners') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
-                } after:transition-all after:duration-200`}
-              >
-                Partners
-              </Link>
-              <Link
-                href="/partners2"
-                className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
-                  isActive('/partners2') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
-                } after:transition-all after:duration-200`}
-              >
-                Partners2
-              </Link>
-              <Link
-                href="/partners3"
                 className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
                   isActive('/partners3') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
                 } after:transition-all after:duration-200`}
               >
-                Partners3
+                Partners
               </Link>
               <Link
                 href="/about"
@@ -94,7 +81,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
-              type="button"
+              onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-yellow-100 transition-colors duration-200 focus:outline-none"
             >
               <svg
@@ -117,7 +104,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className="md:hidden">
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             href="/"

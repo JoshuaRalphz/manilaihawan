@@ -36,7 +36,7 @@ export default function Home() {
       `}</style>
       <main className="container mx-auto px-4 md:px-6 py-8 md:py-12 max-w-6xl">
         {/* Hero Section */}
-        <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] max-h-[700px] rounded-xl overflow-hidden mb-8 md:mb-16">
+        <div className="relative h-[30vh] md:h-[50vh] lg:h-[60vh] max-h-[700px] rounded-xl overflow-hidden mb-8 md:mb-16">
           {/* Carousel */}
           <div className="relative h-full">
             {images.map((src, index) => (
@@ -70,10 +70,10 @@ export default function Home() {
               />
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
-              Taste the Flavors of Manila
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+              Authentic Filipino Flavors
             </h1>
-            <p className="text-base md:text-xl text-white/90 max-w-2xl mb-4 md:mb-8">
+            <p className="text-sm md:text-lg text-white/90 max-w-2xl mb-4 md:mb-8">
               Authentic Filipino flavors crafted with love since 1989. Experience the best Longanisa, Tocino, and more!
             </p>
             <div className="flex flex-col md:flex-row gap-4 md:gap-6">
