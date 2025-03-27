@@ -240,10 +240,10 @@ export default function Home() {
                         renderItem={(item, idx) => (
                           <div
                             onClick={() => handleImageClick(item.image, item)}
-                            className="cursor-pointer"
+                            className="cursor-pointer group relative"
                           >
                             <List.Item 
-                              className="!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-white rounded-lg transition-all duration-200 transform hover:scale-105 font-agbalumo"
+                              className="!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-[#fff3e0] rounded-lg transition-all duration-200 transform hover:scale-[1.02] font-agbalumo"
                             >
                               <div className="flex items-center space-x-2 sm:space-x-3">
                                 <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
@@ -252,6 +252,10 @@ export default function Home() {
                                 </span>
                               </div>
                             </List.Item>
+                            {/* Tooltip */}
+                            <div className="absolute -top-5 right-2 bg-[#d32f2f] text-white px-3 py-1.5 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Click to see
+                            </div>
                           </div>
                         )}
                       />
