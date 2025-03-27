@@ -86,7 +86,7 @@ export default function Partners() {
         <div className="relative h-[30vh] md:h-[40vh] rounded-xl overflow-hidden mb-8 md:mb-16">
           <div className="absolute inset-0">
             <Image
-              src="/images/tc1.jpg"
+              src="/images/partners2.jpeg"
               alt="Our Partners"
               fill
               className="object-cover"
