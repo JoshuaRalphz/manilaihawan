@@ -58,12 +58,12 @@ const products = [
     items: [
       { 
         name: "Pork Tocino", 
-        image: "/images/products/tocino/pork.png",
+        image: "/images/products/tocino/1.png",
         description: "The classic sweet and savory Filipino favorite, marinated to perfection. A breakfast staple everyone craves!"
       },
       { 
         name: "Chicken Tocino", 
-        image: "/images/products/tocino/chicken.png",
+        image: "/images/products/tocino/2.png",
         description: "A deliciously sweet and savory chicken alternative to the traditional tocino. A lighter option that doesn't compromise on flavor!"
       }
     ]
@@ -75,7 +75,7 @@ const products = [
     items: [
       { 
         name: "Beef Tapa", 
-        image: "/images/products/tapa/tapa.png",
+        image: "/images/products/tapa/1.png",
         description: "Our take on this classic dish, featuring a delicious combination of garlic and soy sauce. A go-to for those who love rich, umami flavors!"
       }
     ]
@@ -87,16 +87,14 @@ const products = [
     items: [
       { 
         name: "Pork Asado Siopao", 
-        image: "/images/products/siopao/sopa2.jpg",
+        image: "/images/products/siopao/1.png",
         description: "A Filipino classic filled with juicy, savory-sweet pork. A best-seller for its melt-in-your-mouth goodness!"
       },
       { 
         name: "Chicken Asado Siopao", 
-        image: "/images/products/siopao/sopa.jpg",
+        image: "/images/products/siopao/2.png",
         description: "A flavorful chicken alternative with a perfect balance of sweet and savory. A fluffy, flavorful delight that's always in demand!"
       },
-      { name: "Deluxe Pork Bola Bola Siopao", image: "/images/0.png" },
-      { name: "Deluxe Chicken Bola Bola Siopao", image: "/images/0.png" }
     ]
   },
   {
@@ -106,16 +104,34 @@ const products = [
     items: [
       { 
         name: "Pork Lumpia Shanghai", 
-        image: "/images/products/shanghai/IMG_1321.jpg",
+        image: "/images/products/shanghai/1.png",
         description: "A meaty and garlicky filling wrapped in a crispy golden shell. Perfectly crunchy and always a hit at gatherings!"
       },
       { 
         name: "Chicken Lumpia Shanghai", 
-        image: "/images/products/shanghai/IMG_1322.jpg",
+        image: "/images/products/shanghai/2.png",
         description: "A lighter yet equally flavorful version of the classic lumpia, packed with delicious chicken filling."
       }
     ]
+  },
+  {
+    "title": "Meat Blood",
+    "image": "/images/products/blood/blood.png",
+    "description": "Rich & Flavorful Meat Blood - Perfect for traditional dishes and hearty meals!",
+    "items": [
+      { 
+        "name": "Pork Blood", 
+        "image": "/images/products/blood/1.png",
+        "description": "Fresh pork blood, ideal for making dinuguan and other savory delicacies."
+      },
+      { 
+        "name": "Beef Blood", 
+        "image": "/images/products/blood/2.png",
+        "description": "High-quality beef blood, great for soups, stews, and authentic culinary creations."
+      }
+    ]
   }
+  
 ];
 
 export default function Home() {
