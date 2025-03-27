@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-8 py-4 sm:py-8 bg-yellow-800 text-white text-sm">
+    <footer className="mt-8 py-4 sm:py-8 bg-gradient-to-r from-[#C71107] via-[#E67E22] to-[#610804] text-white text-sm">
       <div className="container mx-auto px-3 sm:px-6">
         {/* Mobile-optimized grid */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">

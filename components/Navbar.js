@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Navigation - Top Fixed */}
-      <nav className="bg-yellow-800 backdrop-blur-sm border-b border-[#e0e0e0] sticky top-0 z-50 hidden md:block">
+      <nav className="bg-gradient-to-r from-[#C71107] via-[#E67E22] to-[#610804] backdrop-blur-sm border-b border-[#e0e0e0] sticky top-0 z-50 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
@@ -36,6 +36,8 @@ export default function Navbar() {
             {/* Desktop Navigation Links */}
             <div className="flex items-center justify-end flex-grow mx-8">
               <div className="flex space-x-8">
+
+
                 <Link
                   href="/"
                   className={`text-white hover:text-yellow-100 transition-colors duration-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-yellow-100 ${
@@ -83,7 +85,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Navigation - Top Bar with Logo */}
-      <nav className="bg-yellow-800 backdrop-blur-sm border-b border-[#e0e0e0] sticky top-0 z-40 md:hidden">
+      <nav className="bg-gradient-to-r from-[#C71107] via-[#E67E22] to-[#610804] backdrop-blur-sm border-b border-[#e0e0e0] sticky top-0 z-40 md:hidden">
         <div className="px-4 py-2">
           <div className="flex items-center justify-center">
             {/* Logo */}
@@ -115,7 +117,7 @@ export default function Navbar() {
 
       {/* Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-yellow-800 shadow-lg z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-r from-[#C71107] via-[#E67E22] to-[#610804] shadow-lg z-50 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -174,7 +176,7 @@ export default function Navbar() {
 
       {/* Fixed Bottom-Left Mobile Navigation */}
       <nav className="fixed bottom-4 left-4 z-50 md:hidden">
-        <div className="bg-yellow-800 rounded-full shadow-lg p-3">
+        <div className="bg-gradient-to-r from-[#C71107] via-[#E67E22] to-[#610804] rounded-full shadow-lg p-3">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white hover:text-yellow-100 focus:outline-none"

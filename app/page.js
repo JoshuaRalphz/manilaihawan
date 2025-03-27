@@ -28,7 +28,7 @@ export default function Home() {
   }, [images.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#fff3e0] to-[#fff9e8]">
+    <div className="min-h-screen bg-gradient-to-b from-[#fff3e0] to-[#fff9e8] font-sans">
       <style jsx>{`
         body {
           background: linear-gradient(to bottom, #fff3e0, #fff9e8);
