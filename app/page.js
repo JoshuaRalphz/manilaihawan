@@ -240,7 +240,7 @@ export default function Home() {
         {/* About Section - Improved padding for mobile */}
         <section className={`bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 mb-8 sm:mb-12 md:mb-20 ${kaushan.className}`}>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className={`text-xl sm:text-2xl md:text-4xl font-bold text-[#2c2416] mb-3 sm:mb-4 md:mb-6 font-agbalumo`}>
+            <h2 className={`text-xl sm:text-2xl md:text-4xl font-bold text-[#2c2416] mb-3 sm:mb-4 md:mb-6 ${kaushan.className}`}>
               Family Recipes, Perfected Over Generations
             </h2>
             <p className={`text-sm sm:text-base md:text-lg text-[#4a4235] mb-4 md:mb-6 px-2 font-agbalumo`}>

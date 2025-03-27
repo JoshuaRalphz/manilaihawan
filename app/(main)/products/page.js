@@ -167,7 +167,7 @@ export default function Home() {
           top: 900, // Adjust this value as needed
           behavior: 'smooth'
         });
-      }, 500); // Delay between scrolls
+      }, 1500); // Delay between scrolls
     }
   };
 
