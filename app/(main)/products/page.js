@@ -4,8 +4,14 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import { Card, List, Tooltip, Modal } from 'antd';
 import 'antd/dist/reset.css';
+import { Kaushan_Script } from 'next/font/google';
 
 const { Meta } = Card;
+
+const kaushan = Kaushan_Script({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 const products = [
   {
@@ -166,13 +172,13 @@ export default function Home() {
               />
             </div>
             
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4 ${kaushan.className}`}>
               Authentic Flavors of Manila
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mb-4 md:mb-6 px-2">
+            <p className={`text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mb-4 md:mb-6 px-2 font-agbalumo`}>
               Authentic Filipino flavors since 1989. Enjoy our signature Longanisa, Tocino, and more!
             </p>
-            <div className="flex flex-row gap-3 sm:gap-4 md:gap-6 justify-center">
+            <div className="flex flex-row gap-3 sm:gap-4 md:gap-6 justify-center font-agbalumo">
               <a
                 className="rounded-lg bg-[var(--primary)] text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors duration-300 transform hover:scale-105"
                 href="/products"
@@ -192,10 +198,10 @@ export default function Home() {
         {/* Products Section - Improved grid for different screen sizes */}
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2c2416] mb-2 sm:mb-4">
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-[#2c2416] mb-2 sm:mb-4 ${kaushan.className}`}>
               Our Premium Products
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-[#4a4235] max-w-2xl mx-auto px-2">
+            <p className="text-sm sm:text-base md:text-lg text-[#4a4235] max-w-2xl mx-auto px-2 font-agbalumo">
               Explore our wide range of authentic Filipino products, made with traditional recipes and the finest ingredients
             </p>
           </div>
@@ -219,13 +225,13 @@ export default function Home() {
                 </div>
                 <Meta
                   title={
-                    <h2 className="text-xl sm:text-2xl font-bold text-[#d32f2f] pt-3 sm:pt-4">
+                    <h2 className={`text-xl sm:text-2xl font-bold text-[#d32f2f] pt-3 sm:pt-4 ${kaushan.className}`}>
                       {product.title}
                     </h2>
                   }
                   description={
                     <div>
-                      <p className="text-xs sm:text-sm text-[#4a4235] px-2 sm:px-4 mt-1 sm:mt-2 mb-2 sm:mb-4 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#4a4235] px-2 sm:px-4 mt-1 sm:mt-2 mb-2 sm:mb-4 leading-relaxed font-agbalumo">
                         {product.description}
                       </p>
                       <List
@@ -237,7 +243,7 @@ export default function Home() {
                             className="cursor-pointer"
                           >
                             <List.Item 
-                              className="!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-white rounded-lg transition-all duration-200 transform hover:scale-105"
+                              className="!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-white rounded-lg transition-all duration-200 transform hover:scale-105 font-agbalumo"
                             >
                               <div className="flex items-center space-x-2 sm:space-x-3">
                                 <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
@@ -252,9 +258,6 @@ export default function Home() {
                     </div>
                   }
                 />
-                <button className="w-full bg-[#d32f2f] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-[#b71c1c] transition-colors duration-200 mt-2 sm:mt-4 text-sm sm:text-base">
-                  Order Now
-                </button>
               </Card>
             ))}
           </div>

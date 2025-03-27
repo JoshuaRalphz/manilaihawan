@@ -96,10 +96,10 @@ export default function Partners() {
 
           {/* Overlay Content */}
           <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-4 md:p-8">
-            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-white mb-4 md:mb-6">
+            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-white mb-4 md:mb-6" style={{ fontFamily: "'Kaushan Script', cursive" }}>
               Our Partners
             </h1>
-            <p className="text-base md:text-xl text-white/90 max-w-2xl">
+            <p className="text-base md:text-xl text-white/90 max-w-2xl font-agbalumo">
               Meet the retailers, restaurants, and caterers who proudly feature Manila's Ihawan products
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function Partners() {
             <h2 className="font-display text-xl md:text-3xl text-[#2c2416] mb-4">
               Where to Find Manila's Ihawan Products
             </h2>
-            <p className="text-base text-[#4a4235]">
+            <p className="text-base text-[#4a4235] font-agbalumo">
               Since 1989, we've partnered with these fine establishments to bring our authentic Filipino products to customers across North America.
             </p>
           </div>
@@ -139,23 +139,17 @@ export default function Partners() {
                 {/* Call to Action */}
                 <section className="text-center mb-8">
           <h2 className="font-display text-2xl md:text-3xl text-[#2c2416] mb-4">
-            Ready to Join the Manila's Ihawan Family?
+          Interested in carrying Manila's Ihawan products contact us
           </h2>
-          <p className="text-[#4a4235] max-w-2xl mx-auto mb-6">
+          <p className="text-[#4a4235] max-w-2xl mx-auto mb-6 font-agbalumo">
             Take the first step toward bringing authentic Filipino flavors to your customers.
           </p>
           <div className="flex justify-center gap-4">
             <a
               href="/contact"
-              className="rounded-lg bg-[#d32f2f] text-white px-6 py-3 text-base font-medium hover:bg-[#b71c1c] transition-colors"
+              className="rounded-lg bg-[#d32f2f] text-white px-6 py-3 text-base font-medium hover:bg-[#b71c1c] transition-colors font-agbalumo"
             >
-              Apply Now
-            </a>
-            <a
-              href="/wholesale"
-              className="rounded-lg border-2 border-[#d32f2f] text-[#d32f2f] px-6 py-3 text-base font-medium hover:bg-[#d32f2f]/10 transition-colors"
-            >
-              Wholesale Info
+              Contact Us
             </a>
           </div>
         </section>

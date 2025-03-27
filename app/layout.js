@@ -25,7 +25,7 @@ const poppins = Poppins({
 // Configure Kaushan Script font
 const kaushanScript = Kaushan_Script({
   subsets: ['latin'],
-  weight: '400', // Kaushan Script only has one weight
+  weight: '400',
   variable: '--font-kaushan-script',
 });
 

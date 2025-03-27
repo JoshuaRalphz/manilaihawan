@@ -1,12 +1,26 @@
+import { Agbalumo } from 'next/font/google';
+import { Kaushan_Script } from 'next/font/google';
+
+const agbalumo = Agbalumo({
+  subsets: ['latin'],
+  weight: '400',
+});
+
+const kaushanScript = Kaushan_Script({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-kaushan-script',
+});
+
 export default function Footer() {
   return (
-    <footer className="mt-8 py-4 sm:py-8 bg-gradient-to-r from-[#C71107] via-[#E67E22] to-[#610804] text-white text-sm">
+    <footer className={`mt-8 py-4 sm:py-8 bg-gradient-to-r from-[#C71107] via-[#E67E22] to-[#610804] text-white text-sm ${agbalumo.className}`}>
       <div className="container mx-auto px-3 sm:px-6">
         {/* Mobile-optimized grid */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
           {/* About Section - Very concise */}
           <div className="col-span-2 sm:col-span-1 mb-3 sm:mb-0">
-            <h3 className="text-base font-semibold mb-1.5">About Us</h3>
+            <h3 className={`text-base font-semibold mb-1.5 ${kaushanScript.variable} font-script`}>About Us</h3>
             <p className="text-xs text-white/80 leading-snug">
               Since 1989, bringing authentic Filipino cuisine to your table.
             </p>
@@ -14,7 +28,7 @@ export default function Footer() {
 
           {/* Quick Links - Horizontal on mobile */}
           <div className="col-span-1 mb-3 sm:mb-0">
-            <h3 className="text-base font-semibold mb-1.5">Links</h3>
+          <h3 className={`text-base font-semibold mb-1.5 ${kaushanScript.variable} font-script`}>About Us</h3>
             <div className="grid grid-cols-1 gap-0.5">
               <a href="/" className="text-xs text-white/80 hover:text-yellow-300 transition-colors">Home</a>
               <a href="/products" className="text-xs text-white/80 hover:text-yellow-300 transition-colors">Products</a>
@@ -25,7 +39,7 @@ export default function Footer() {
 
           {/* Contact Info - Compact */}
           <div className="col-span-1">
-            <h3 className="text-base font-semibold mb-1.5">Contact</h3>
+          <h3 className={`text-base font-semibold mb-1.5 ${kaushanScript.variable} font-script`}>Contact</h3>
             <address className="text-xs text-white/80 not-italic space-y-0.5">
               <p>Oak Ridge, NJ 07438</p>
               <p><a href="tel:+19736972240" className="hover:text-yellow-300">(973) 697-2240</a></p>
