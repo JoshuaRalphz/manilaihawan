@@ -12,14 +12,6 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-4 sm:space-y-5 md:space-y-6">
             <div className="bg-[#f8f4e3] p-4 sm:p-5 md:p-6 rounded-lg">
-              <h2 className="text-xl sm:text-2xl font-bold text-[#d32f2f] mb-2 sm:mb-3 md:mb-4">Our Location</h2>
-              <p className="text-base sm:text-lg text-[#4a4235]">
-                5 Wegmann Way<br />
-                Oak Ridge, NJ 07438
-              </p>
-            </div>
-
-            <div className="bg-[#f8f4e3] p-4 sm:p-5 md:p-6 rounded-lg">
               <h2 className="text-xl sm:text-2xl font-bold text-[#d32f2f] mb-2 sm:mb-3 md:mb-4">Contact Details</h2>
               <p className="text-base sm:text-lg text-[#4a4235] mb-2 sm:mb-3 md:mb-4">
                 <span className="font-medium">Phone:</span> <a href="tel:+19736972240" className="hover:text-[#d32f2f]">(973) 697-2240</a><br />
@@ -32,15 +24,6 @@ export default function Contact() {
                 >
                   info@manilasihawan.com
                 </a>
-              </p>
-            </div>
-
-            <div className="bg-[#f8f4e3] p-4 sm:p-5 md:p-6 rounded-lg">
-              <h2 className="text-xl sm:text-2xl font-bold text-[#d32f2f] mb-2 sm:mb-3 md:mb-4">Business Hours</h2>
-              <p className="text-base sm:text-lg text-[#4a4235]">
-                Monday - Friday: 8:00 AM - 5:00 PM<br />
-                Saturday: 9:00 AM - 3:00 PM<br />
-                Sunday: Closed
               </p>
             </div>
           </div>
@@ -82,21 +65,6 @@ export default function Contact() {
                 Send Message
               </button>
             </form>
-          </div>
-        </div>
-
-        {/* Map Section */}
-        <div className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 rounded-lg overflow-hidden shadow-md">
-          <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[400px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.234567890123!2d-74.12345678901234!3d40.98765432109876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDU5JzE1LjYiTiA3NMKwMDcnMjEuNyJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              className="rounded-lg absolute inset-0"
-            ></iframe>
           </div>
         </div>
       </div>
