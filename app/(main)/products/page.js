@@ -21,32 +21,32 @@ const products = [
     items: [
       { 
         name: "Sweet Longanisa", 
-        image: "/images/products/longanisa/l1.jpg",
+        image: "/images/products/longanisa/1.png",
         description: "A deliciously sweet pork sausage with a perfect balance of savory and garlicky notes. A family favorite for its irresistible sweetness!"
       },
       { 
         name: "Hot Longanisa", 
-        image: "/images/products/longanisa/l2.jpg",
+        image: "/images/products/longanisa/2.png",
         description: "For those who love a little spice, this longanisa has just the right amount of heat combined with savory goodness. Loved for its bold kick and rich flavor!"
       },
       { 
         name: "Vigan Pork Longanisa", 
-        image: "/images/products/longanisa/vganlong.jpg",
+        image: "/images/products/longanisa/3.png",
         description: "A bold and distinct flavor with a garlicky, sour, and savory profile. A must-try for garlic lovers!"
       },
       { 
         name: "Pork Adobo Longanisa", 
-        image: "/images/products/longanisa/l3.jpg",
+        image: "/images/products/longanisa/4.png",
         description: "A unique twist on the classic Adobo flavor, featuring rich garlic, soy sauce, and vinegar notes."
       },
       { 
         name: "Chicken Longanisa", 
-        image: "/images/products/longanisa/l4.jpg",
+        image: "/images/products/longanisa/5.png",
         description: "The sweetness of chicken paired with a savory and garlicky finish."
       },
       { 
         name: "Chicken Adobo Longanisa", 
-        image: "/images/products/longanisa/chkn adobo.jpg",
+        image: "/images/products/longanisa/6.png",
         description: "A chicken version of the Adobo-inspired longanisa, highlighting garlic, soy sauce, and vinegar."
       }
     ]
@@ -58,12 +58,12 @@ const products = [
     items: [
       { 
         name: "Pork Tocino", 
-        image: "/images/products/tocino/p1.jpg",
+        image: "/images/products/tocino/pork.png",
         description: "The classic sweet and savory Filipino favorite, marinated to perfection. A breakfast staple everyone craves!"
       },
       { 
         name: "Chicken Tocino", 
-        image: "/images/products/tocino/chicken tocino.jpg",
+        image: "/images/products/tocino/chicken.png",
         description: "A deliciously sweet and savory chicken alternative to the traditional tocino. A lighter option that doesn't compromise on flavor!"
       }
     ]
@@ -75,7 +75,7 @@ const products = [
     items: [
       { 
         name: "Beef Tapa", 
-        image: "/images/products/tapa/t1.jpg",
+        image: "/images/products/tapa/tapa.png",
         description: "Our take on this classic dish, featuring a delicious combination of garlic and soy sauce. A go-to for those who love rich, umami flavors!"
       }
     ]
