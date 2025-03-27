@@ -96,7 +96,7 @@ export default function Partners() {
 
           {/* Overlay Content */}
           <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-4 md:p-8">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-white mb-4 md:mb-6">
               Our Partners
             </h1>
             <p className="text-base md:text-xl text-white/90 max-w-2xl">
@@ -108,7 +108,7 @@ export default function Partners() {
         {/* Introduction Section */}
         <section className="bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-8 md:mb-12">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-xl md:text-3xl font-bold text-[#2c2416] mb-4">
+            <h2 className="font-display text-xl md:text-3xl text-[#2c2416] mb-4">
               Where to Find Manila's Ihawan Products
             </h2>
             <p className="text-base text-[#4a4235]">
@@ -138,7 +138,7 @@ export default function Partners() {
 
                 {/* Call to Action */}
                 <section className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#2c2416] mb-4">
+          <h2 className="font-display text-2xl md:text-3xl text-[#2c2416] mb-4">
             Ready to Join the Manila's Ihawan Family?
           </h2>
           <p className="text-[#4a4235] max-w-2xl mx-auto mb-6">

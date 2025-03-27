@@ -2,6 +2,17 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
+import { Shrikhand, Kaushan_Script } from 'next/font/google';
+
+const shrikhand = Shrikhand({ 
+  weight: '400',
+  subsets: ['latin'],
+});
+
+const kaushan = Kaushan_Script({ 
+  weight: '400',
+  subsets: ['latin'],
+});
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -70,13 +81,13 @@ export default function Home() {
               />
             </div>
             
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-6">
+            <h1 className={`text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-6 ${kaushan.className}`}>
               Authentic Filipino Flavors
             </h1>
-            <p className="text-xs sm:text-sm md:text-lg text-white/90 max-w-2xl mb-3 md:mb-8 px-2">
+            <p className={`text-xs sm:text-sm md:text-lg text-white/90 max-w-2xl mb-3 md:mb-8 px-2 ${kaushan.className}`}>
               Authentic Filipino flavors crafted with love since 1989. Experience the best Longanisa, Tocino, and more!
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
+            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 ${kaushan.className}`}>
               <a
                 className="rounded-lg bg-[var(--primary)] text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors duration-300 transform hover:scale-105"
                 href="/products"
