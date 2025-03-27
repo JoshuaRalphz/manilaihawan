@@ -151,6 +151,26 @@ export default function Home() {
     setSelectedItem(null);
   };
 
+  const handleScrollToProducts = (e) => {
+    e.preventDefault();
+    const productsSection = document.getElementById('products-section');
+    if (productsSection) {
+      // First scroll - adjust the 'block' value to control scroll strength
+      productsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' // Change this value to adjust scroll strength
+      });
+      
+      // Second scroll after the first one completes
+      setTimeout(() => {
+        window.scrollBy({
+          top: 900, // Adjust this value as needed
+          behavior: 'smooth'
+        });
+      }, 500); // Delay between scrolls
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fff3e0] to-[#fff9e8]">
       <style jsx>{`
@@ -197,7 +217,8 @@ export default function Home() {
             <div className="flex flex-row gap-3 sm:gap-4 md:gap-6 justify-center font-agbalumo">
               <a
                 className="rounded-lg bg-[var(--primary)] text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors duration-300 transform hover:scale-105"
-                href="/products"
+                href="#products-section"
+                onClick={handleScrollToProducts}
               >
                 Browse Our Selection
               </a>
@@ -212,7 +233,7 @@ export default function Home() {
         </div>
 
         {/* Products Section - Improved grid for different screen sizes */}
-        <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
+        <div id="products-section" className="container mx-auto px-2 sm:px-4 max-w-7xl">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-[#2c2416] mb-2 sm:mb-4 ${kaushan.className}`}>
               Our Premium Products
