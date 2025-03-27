@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { Poppins } from 'next/font/google';
 import { Kaushan_Script } from "next/font/google";
 import { Shrikhand } from "next/font/google";
+import { Agbalumo } from 'next/font/google';
 
 // Configure Jost font with additional options
 const jost = Jost({
@@ -35,6 +36,12 @@ const shrikhand = Shrikhand({
   variable: '--font-shrikhand',
 });
 
+const agbalumo = Agbalumo({
+  subsets: ['latin'],
+  weight: '400', // Agbalumo only has one weight
+  variable: '--font-agbalumo',
+});
+
 export const metadata = {
   title: "Manila's Ihawan",
   description: "Authentic Filipino flavors since 1989",
@@ -42,7 +49,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${jost.variable} ${poppins.variable} ${kaushanScript.variable} ${shrikhand.variable}`}>
+    <html lang="en" className={`${jost.variable} ${poppins.variable} ${kaushanScript.variable} ${shrikhand.variable} ${agbalumo.variable}`}>
       <body className="font-sans antialiased bg-gradient-to-b from-[#fff3e0] to-[#fff9e8]">
         <Navbar />
         <main className="min-h-screen">

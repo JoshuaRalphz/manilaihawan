@@ -15,6 +15,8 @@ export default {
         script: ['var(--font-kaushan-script)', 'cursive'],
         sans: ['var(--font-poppins)', 'sans-serif'],
         display: ['var(--font-shrikhand)', 'cursive'],
+        johmuria: ['var(--font-johmuria)', 'cursive'],
+        agbalumo: ['var(--font-agbalumo)', 'cursive'],
       },
     },
   },
