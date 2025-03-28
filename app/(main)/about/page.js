@@ -12,6 +12,23 @@ export default function About() {
         <p className="text-base sm:text-lg mb-4 sm:mb-6 text-[#444444] leading-relaxed">
         Today, Manila’s Ihawan is not just a household name but also a leading manufacturer and distributor of Filipino food products, bringing the rich flavors of the Philippines to tables across the United States, all while staying true to our heritage.
         </p>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-[#1a1a1a]">Our Philosophy</h2>
+        <p className="text-lg mb-6 text-[#444444] leading-relaxed">
+          At Manila's Ihawan, we believe in preserving the integrity of traditional Filipino flavors. Our products are crafted without fillers, extenders, or artificial colorings, ensuring that every bite delivers authentic taste and nutritional value. We maintain strict quality control measures throughout our production process to guarantee food safety and consistency.
+        </p>
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-[#1a1a1a]">Our Commitment</h2>
+        <div className="text-lg mb-6 text-[#444444] leading-relaxed">
+          We are dedicated to:
+          <ul className="list-disc pl-6 mt-2 space-y-2 text-[#444444]">
+            <li>Using only the finest, natural ingredients</li>
+            <li>Preserving traditional Filipino recipes</li>
+            <li>Maintaining the highest food safety standards</li>
+            <li>Providing exceptional customer service</li>
+            <li>Supporting sustainable business practices</li>
+          </ul>
+        </div>
+        
       </div>
     </div>
   );
