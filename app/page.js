@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
-import { Shrikhand, Kaushan_Script, Jomhuria } from 'next/font/google';
+import { Shrikhand, Kaushan_Script, Jomhuria, Poppins } from 'next/font/google';
 
 const shrikhand = Shrikhand({ 
   weight: '400',
@@ -17,6 +17,12 @@ const kaushan = Kaushan_Script({
 const johmuria = Jomhuria({ 
   weight: '400',
   subsets: ['latin'],
+});
+
+// Configure the Poppins font
+const poppins = Poppins({
+  weight: '400', // Specify the font weight (e.g., '400', '700', etc.)
+  subsets: ['latin'], // Specify the subsets you want to load
 });
 
 export default function Home() {
@@ -89,10 +95,10 @@ export default function Home() {
             <h1 className={`text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-6 ${kaushan.className}`}>
               Authentic Filipino Flavors
             </h1>
-            <p className={`text-base sm:text-lg md:text-2xl text-white/90 max-w-2xl mb-3 md:mb-8 px-2 font-agbalumo`}>
+            <p className={`text-base sm:text-lg md:text-2xl text-white/90 max-w-2xl mb-3 md:mb-8 px-2 ${poppins.className}`}>
               Authentic Filipino flavors crafted with love since 1989. Experience the best Longanisa, Tocino, and more!
             </p>
-            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 font-agbalumo`}>
+            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 ${poppins.className}`}>
               <a
                 className="rounded-lg bg-[var(--primary)] text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors duration-300 transform hover:scale-105"
                 href="/products"
@@ -132,7 +138,7 @@ export default function Home() {
                     Filipino - Style Sausage
                   </span>
                 </h3>
-                <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] font-agbalumo`}>
+                <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] ${poppins.className}`}>
                   Savory, sweet, and packed with flavor, our longanisa is perfect for breakfast, lunch, or dinner.
                 </p>
               </div>
@@ -155,7 +161,7 @@ export default function Home() {
                     Sweet & Savory Marinated Meat
                   </span>
                 </h3>
-                <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] font-agbalumo`}>
+                <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] ${poppins.className}`}>
                   Perfectly marinated for a mouthwatering experience!
                 </p>
               </div>
@@ -178,7 +184,7 @@ export default function Home() {
                     Soft & Fluffy Steamed Buns
                   </span>
                 </h3>
-                <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] font-agbalumo `}>
+                <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] ${poppins.className} `}>
                   A comforting blend of sweet, salty, and meaty flavors in every bite.
                 </p>
               </div>
@@ -204,7 +210,7 @@ export default function Home() {
                         Crispy & Flavorful Spring Rolls
                       </span>
                     </h3>
-                    <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] font-agbalumo`}>
+                    <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] ${poppins.className}`}>
                       Golden, crispy, and packed with savory goodness!
                     </p>
                   </div>
@@ -227,7 +233,7 @@ export default function Home() {
                         Marinated Beef Slices
                       </span>
                     </h3>
-                    <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] font-agbalumo`}>
+                    <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] ${poppins.className}`}>
                       A Filipino breakfast staple, marinated with bold flavors.
                     </p>
                   </div>
@@ -243,13 +249,13 @@ export default function Home() {
             <h2 className={`text-xl sm:text-2xl md:text-4xl font-bold text-[#2c2416] mb-3 sm:mb-4 md:mb-6 ${kaushan.className}`}>
               Family Recipes, Perfected Over Generations
             </h2>
-            <p className={`text-sm sm:text-base md:text-lg text-[#4a4235] mb-4 md:mb-6 px-2 font-agbalumo`}>
+            <p className={`text-sm sm:text-base md:text-lg text-[#4a4235] mb-4 md:mb-6 px-2 ${poppins.className}`}>
               Since 1989, we've been dedicated to bringing you the authentic taste of Filipino cuisine. 
               Our products are made with no artificial colors, flavors, or fillers - just pure, natural goodness.
             </p>
             <a
               href="/about"
-              className={`inline-block rounded-lg bg-[#d32f2f] text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors font-agbalumo`}
+              className={`inline-block rounded-lg bg-[#d32f2f] text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#b71c1c] transition-colors ${poppins.className}`}
             >
               Learn More About Us
             </a>
