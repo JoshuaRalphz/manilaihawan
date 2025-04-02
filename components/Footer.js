@@ -27,9 +27,8 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-base font-semibold mb-1.5">Contact</h3>
             <address className="text-xs text-white/80 not-italic space-y-0.5">
-              <p>Oak Ridge, NJ 07438</p>
               <p><a href="tel:+19736972240" className="hover:text-yellow-300">(973) 697-2240</a></p>
-              <p><a href="mailto:info@manilasihawan.com" className="hover:text-yellow-300">info@manilasihawan.com</a></p>
+              <p><a href="mailto:info@manilasihawan.com" className="hover:text-yellow-300">info@agimeneztrading.com</a></p>
             </address>
           </div>
         </div>

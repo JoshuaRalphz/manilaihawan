@@ -229,7 +229,7 @@ export default function Home() {
               </a>
               <a
                 className="rounded-lg border-2 border-white text-white px-4 py-2 sm:px-6 md:px-8 md:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[var(--secondary)] hover:text-[var(--primary)] transition-colors duration-300"
-                href="/about"
+                href="/contact"
               >
                 Get in Touch
               </a>

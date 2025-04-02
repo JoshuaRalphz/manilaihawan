@@ -43,7 +43,7 @@ export default function Contact() {
                       href="mailto:info@manilasihawan.com" 
                       className="text-sm sm:text-base text-[#2c2416] hover:text-[#d32f2f] transition-colors"
                     >
-                      info@manilasihawan.com
+                      info@agimeneztrading.com
                     </a>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ export default function Contact() {
           <div className="bg-[#f8f4e3] p-4 sm:p-6 rounded-xl shadow-sm">
             <h2 className="text-lg sm:text-xl font-bold text-[#d32f2f] mb-4">Send Us a Message</h2>
             <form className="space-y-3">
-              <div className="grid grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 gap-3 text-black">
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -77,7 +77,7 @@ export default function Contact() {
                 <textarea
                   placeholder="Your Message"
                   rows="4"
-                  className="w-full px-3 py-2 rounded-lg border border-[#e0e0e0] focus:ring-2 focus:ring-[#d32f2f] focus:border-[#d32f2f] outline-none text-xs sm:text-sm transition-all"
+                  className=" w-full px-3 py-2 rounded-lg border border-[#e0e0e0] focus:ring-2 focus:ring-[#d32f2f] focus:border-[#d32f2f] outline-none text-xs sm:text-sm transition-all"
                   required
                 ></textarea>
               </div>
