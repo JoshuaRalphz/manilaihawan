@@ -35,7 +35,6 @@ export default function Home() {
     "/images/tap.jpg",
     "/images/tc1.jpg",
     "/images/products/tocino-recipe.jpg",
-    "/images/products/chor.jpg",
     "/images/products/soppi.jpg",
     "/images/products/tapa.jpg",
     "/images/products/siopao.jpg",
