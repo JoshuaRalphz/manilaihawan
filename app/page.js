@@ -122,7 +122,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 p-6 sm:p-8 md:p-10">
               <div className="relative w-full md:w-80 h-56 md:h-64 rounded-xl overflow-hidden flex-shrink-0">
                 <Image
-                  src="/images/products/chor.jpg"
+                  src="/images/products/chor2.jpg"
                   alt="Chorizo De Cebu - New!"
                   fill
                   className="object-cover"
@@ -139,7 +139,7 @@ export default function Home() {
                   Chorizo De Cebu
                 </h2>
                 <p className={`text-white/95 text-sm sm:text-base md:text-lg mb-4 md:mb-6 max-w-xl ${poppins.className}`}>
-                  Our newest addition! Savory, slightly sweet Filipino-style chorizo packed with garlic and paprika. Perfect for breakfast, grilled dishes, or your favorite recipes.
+                Sweet, garlicky, and boldly savory. Made with premium pork and natural spices for a rich, juicy bite with perfectly caramelized edges. A true Cebu style classic with balanced sweetness, aromatic garlic, and deep savory flavor in every link.
                 </p>
                 <a
                   href="/products"

@@ -40,7 +40,9 @@ export default function Contact() {
                   <div>
                     <p className="text-xs sm:text-sm text-[#4a4235] font-medium">Email:</p>
                     <a 
-                      href="mailto:info@manilasihawan.com" 
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=info@manilasihawan.com" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm sm:text-base text-[#2c2416] hover:text-[#d32f2f] transition-colors"
                     >
                       info@agimeneztrading.com

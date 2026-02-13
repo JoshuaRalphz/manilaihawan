@@ -53,6 +53,12 @@ const products = [
         name: "Chicken Adobo Longanisa", 
         image: "/images/products/longanisa/6.png",
         description: "A chicken version of the Adobo-inspired longanisa, highlighting garlic, soy sauce, and vinegar."
+      },
+      { 
+        name: "Chorizo de Cebu", 
+        image: "/images/products/longanisa/7.jpg",
+        description: "Sweet, garlicky, and boldly savory. A true Cebu style classic with balanced sweetness, aromatic garlic, and deep savory flavor in every link..",
+        isNew: true
       }
     ]
   },
@@ -268,6 +274,11 @@ export default function Home() {
                   title={
                     <h2 className={`text-xl sm:text-2xl font-bold text-[#d32f2f] pt-3 sm:pt-4 ${kaushan.className}`}>
                       {product.title}
+                      {product.isNew && (
+                        <span className="text-xs font-normal text-amber-600/90 ml-1.5 align-middle" style={{ fontFamily: 'inherit' }}>
+                          · new
+                        </span>
+                      )}
                     </h2>
                   }
                   description={
