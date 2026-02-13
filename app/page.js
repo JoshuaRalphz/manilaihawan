@@ -35,6 +35,7 @@ export default function Home() {
     "/images/tap.jpg",
     "/images/tc1.jpg",
     "/images/products/tocino-recipe.jpg",
+    "/images/products/chor.jpg",
     "/images/products/soppi.jpg",
     "/images/products/tapa.jpg",
     "/images/products/siopao.jpg",
@@ -192,7 +193,7 @@ export default function Home() {
 
             {/* Side by Side Cards - Adjusted to stack on mobile */}
             <div className="col-span-full">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
                 {/* Lumpia Card */}
                 <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden ${kaushan.className}`}>
                   <div className="relative h-40 sm:h-48 md:h-64">
@@ -235,6 +236,29 @@ export default function Home() {
                     </h3>
                     <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] ${poppins.className}`}>
                       A Filipino breakfast staple, marinated with bold flavors.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Chorizo De Cebu Card */}
+                <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden ${kaushan.className}`}>
+                  <div className="relative h-40 sm:h-48 md:h-64">
+                    <Image
+                      src="/images/products/chor.jpg"
+                      alt="Chorizo De Cebu"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-3 sm:p-4 md:p-6">
+                    <h3 className={`text-lg sm:text-xl md:text-2xl font-bold text-[#d32f2f] mb-1 sm:mb-2 md:mb-4 ${kaushan.className}`}>
+                      Chorizo De Cebu
+                      <span className={`block text-xs sm:text-sm font-normal text-[#4a4235] mt-1 font-agbalumo`}>
+                        Filipino-Style Chorizo Sausage
+                      </span>
+                    </h3>
+                    <p className={`text-xs sm:text-sm md:text-base text-[#4a4235] ${poppins.className}`}>
+                      Savory, slightly sweet chorizo packed with garlic and paprika. Perfect for breakfast or grilled dishes!
                     </p>
                   </div>
                 </div>

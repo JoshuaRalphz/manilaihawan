@@ -135,6 +135,18 @@ const products = [
         "description": "High-quality beef blood, great for soups, stews, and authentic culinary creations."
       }
     ]
+  },
+  {
+    title: "Chorizo De Cebu",
+    image: "/images/products/chor.jpg",
+    description: "Filipino-Style Chorizo Sausage - Savory, slightly sweet, and packed with garlic and paprika. Perfect for breakfast or grilled dishes!",
+    items: [
+      { 
+        name: "Chorizo De Cebu", 
+        image: "/images/products/chor.jpg",
+        description: "Manila's Ihawan Chorizo De Cebu - frozen pork chorizo sausages. Made with pork, soy sauce, garlic, paprika, and spices. Boil with water until evaporated, then fry or grill to an internal temperature of at least 150°F. Net wt. 12 oz (340g)."
+      }
+    ]
   }
   
 ];
