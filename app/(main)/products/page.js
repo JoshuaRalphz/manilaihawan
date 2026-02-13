@@ -53,11 +53,6 @@ const products = [
         name: "Chicken Adobo Longanisa", 
         image: "/images/products/longanisa/6.png",
         description: "A chicken version of the Adobo-inspired longanisa, highlighting garlic, soy sauce, and vinegar."
-      },
-      { 
-        name: "Chorizo De Cebu", 
-        image: "/images/products/longanisa/7.png",
-        description: "Sweet, garlicky, and boldly savory. A true Cebu style classic with balanced sweetness, aromatic garlic, and deep savory flavor in every link."
       }
     ]
   },
@@ -140,20 +135,7 @@ const products = [
         "description": "High-quality beef blood, great for soups, stews, and authentic culinary creations."
       }
     ]
-  },
-  {
-    title: "Chorizo De Cebu",
-    image: "/images/products/chor.jpg",
-    description: "Filipino-Style Chorizo Sausage - Savory, slightly sweet, and packed with garlic and paprika. Perfect for breakfast or grilled dishes!",
-    items: [
-      { 
-        name: "Chorizo De Cebu", 
-        image: "/images/products/chor.jpg",
-        description: "Manila's Ihawan Chorizo De Cebu - frozen pork chorizo sausages. Made with pork, soy sauce, garlic, paprika, and spices. Boil with water until evaporated, then fry or grill to an internal temperature of at least 150°F. Net wt. 12 oz (340g)."
-      }
-    ]
   }
-  
 ];
 
 export default function Home() {
@@ -302,13 +284,18 @@ export default function Home() {
                             className="cursor-pointer group relative"
                           >
                             <List.Item 
-                              className="!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-[#fff3e0] rounded-lg transition-all duration-200 transform hover:scale-[1.02] ${poppins.className}"
+                              className={`!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-[#fff3e0] rounded-lg transition-all duration-200 transform hover:scale-[1.02] ${poppins.className}`}
                             >
-                              <div className="flex items-center space-x-2 sm:space-x-3">
-                                <span className="w-2 h-2 bg-[#d32f2f] rounded-full"></span>
-                                <span className="text-[#4a4235] text-xs sm:text-sm">
-                                  {item.name}
-                                </span>
+                              <div className="flex items-center justify-between gap-2 w-full">
+                                <div className="flex items-center space-x-2 sm:space-x-3 min-w-0">
+                                  <span className="w-2 h-2 bg-[#d32f2f] rounded-full flex-shrink-0"></span>
+                                  <span className="text-[#4a4235] text-xs sm:text-sm truncate">
+                                    {item.name}
+                                  </span>
+                                </div>
+                                {item.isNew && (
+                                  <span className="text-[10px] sm:text-xs text-amber-600 font-medium flex-shrink-0">New</span>
+                                )}
                               </div>
                             </List.Item>
                             {/* Tooltip */}
