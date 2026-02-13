@@ -53,6 +53,11 @@ const products = [
         name: "Chicken Adobo Longanisa", 
         image: "/images/products/longanisa/6.png",
         description: "A chicken version of the Adobo-inspired longanisa, highlighting garlic, soy sauce, and vinegar."
+      },
+      { 
+        name: "Chorizo De Cebu", 
+        image: "/images/products/longanisa/7.png",
+        description: "Sweet, garlicky, and boldly savory. A true Cebu style classic with balanced sweetness, aromatic garlic, and deep savory flavor in every link."
       }
     ]
   },
