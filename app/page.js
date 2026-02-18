@@ -258,7 +258,7 @@ export default function Home() {
                   })}
                   className={`inline-block rounded-lg bg-white text-[#d32f2f] px-5 py-2.5 sm:px-6 md:px-8 md:py-3 text-sm md:text-base font-semibold hover:bg-amber-50 transition-colors duration-300 ${poppins.className}`}
                 >
-                  View Details
+                  Product Details
                 </button>
               </div>
             </div>
