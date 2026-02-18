@@ -237,9 +237,12 @@ export default function Home() {
                   fill
                   className="object-cover"
                 />
-                <span className="absolute top-3 right-3 bg-amber-400 text-[#2c2416] px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide shadow-md">
-                  New
-                </span>
+                <span className="absolute top-3 right-3 bg-amber-400 text-[#2c2416] px-4 py-1.5 rounded-full text-lg font-bold uppercase tracking-wide shadow-md">
+  New
+</span>
+
+
+
               </div>
               <div className="text-center md:text-left text-white flex-1">
                 <p className={`text-amber-300 text-sm sm:text-base font-medium uppercase tracking-wider mb-1 ${poppins.className}`}>
