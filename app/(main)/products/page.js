@@ -314,7 +314,8 @@ export default function Home() {
                                   </span>
                                 </div>
                                 {item.isNew && (
-                                  <span className="text-[10px] sm:text-xs text-amber-600 font-medium flex-shrink-0">New</span>
+                                  <span className="text-[13px] sm:text-[15px] text-amber-600 font-medium flex-shrink-0">
+                                    New</span>
                                 )}
                               </div>
                             </List.Item>
