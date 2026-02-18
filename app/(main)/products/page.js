@@ -298,8 +298,17 @@ export default function Home() {
                               className={`!px-2 sm:!px-4 !py-2 sm:!py-3 !m-0 hover:bg-[#fff3e0] rounded-lg transition-all duration-200 transform hover:scale-[1.02] ${poppins.className}`}
                             >
                               <div className="flex items-center justify-between gap-2 w-full">
-                                <div className="flex items-center space-x-2 sm:space-x-3 min-w-0">
-                                  <span className="w-2 h-2 bg-[#d32f2f] rounded-full flex-shrink-0"></span>
+                                <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+                                  <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex-shrink-0">
+                                    <Image
+                                      src={item.image}
+                                      alt={item.name}
+                                      fill
+                                      className="object-cover"
+                                      sizes="48px"
+                                    />
+                                  </div>
+                                  <span className="w-2 h-2 bg-[#d32f2f] rounded-full flex-shrink-0 hidden sm:block"></span>
                                   <span className="text-[#4a4235] text-xs sm:text-sm truncate">
                                     {item.name}
                                   </span>
